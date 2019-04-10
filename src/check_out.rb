@@ -13,7 +13,7 @@ class CheckOut
       .each_with_object(Hash.new(0)) { |it, acc| acc[it] += 1 }
       .reduce(0) do |total, (name, amount)|
         total += @rules[name].call(amount)
-        total.tap { |it| p it }
+        total
       end
    end
 end
